@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/FilimonovKostya/Webpack/issues"
   },
-  "homepage": "https://github.com/FilimonovKostya/Webpack#readme"
+  "homepage": "https://github.com/FilimonovKostya/Webpack#readme",
+  "dependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
 }
