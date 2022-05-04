@@ -7,13 +7,13 @@ function createAnalytics() {
     document.addEventListener('click', listener)
 
     return {
-        destroy(){
-            document.removeEventListener('click',listener)
+        destroy() {
+            document.removeEventListener('click', listener)
             isDestroyed = true
         },
-        getClick(){
-            if (isDestroyed){
-                return  'Analytics was destroyed'
+        getClick() {
+            if (isDestroyed) {
+                return `Analytics was destroyed. Total clicks ${counter}`
             }
             return counter
         }
