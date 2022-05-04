@@ -10,4 +10,8 @@ export class Post {
             date: this.date.toJSON()
         })
     }
+
+    upperCaseTitle() {
+        return this.title.toUpperCase()
+    }
 }
