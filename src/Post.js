@@ -12,6 +12,7 @@ export class Post {
     }
 
     upperCaseTitle() {
+        console.log('test')
         return this.title.toUpperCase()
     }
 }
