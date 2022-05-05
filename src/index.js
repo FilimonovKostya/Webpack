@@ -1,9 +1,9 @@
-import {Post} from "./Post";
+import {Post} from "@models/Post";
 import "./style/styles.css"
 import json from './assets/json'
-import Logo from './assets/webpack-logo.png'
-import xml from './assets/data.xml'
-import csv from './assets/data.csv'
+import Logo from '@/assets/webpack-logo'
+import xml from './assets/data'
+import csv from './assets/data'
 
 const post = new Post('Webpack post title', Logo)
 
