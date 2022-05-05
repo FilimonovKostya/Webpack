@@ -1,4 +1,5 @@
 import {Post} from "@models/Post";
+import * as $ from 'jquery'
 import "./style/styles.css"
 import json from './assets/json'
 import Logo from '@/assets/webpack-logo'
@@ -15,3 +16,5 @@ console.log('JSON --->', json)
 console.log('xml ', xml)
 
 console.log('CSV', csv)
+
+$('pre').html(post.toString())

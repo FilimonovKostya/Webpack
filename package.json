@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "csv-loader": "^3.0.3",
+    "jquery": "^3.6.0",
     "normalize.css": "^8.0.1",
     "xml-loader": "^1.2.1"
   }
