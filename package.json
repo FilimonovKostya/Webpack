@@ -2,7 +2,7 @@
   "name": "webpackproject",
   "version": "1.0.0",
   "description": "learn webpack",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "webpack --mode development",
     "watch": "webpack --mode development --watch",
@@ -32,6 +32,7 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "xml-loader": "^1.2.1"
   }
 }
