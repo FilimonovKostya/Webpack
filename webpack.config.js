@@ -2,7 +2,8 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin");
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -19,26 +20,33 @@ module.exports = {
         extensions: ['.js', '.json', '.xml', '.csv', '.ttf', '.png'],
         alias: {
             '@models': path.resolve(__dirname, 'src/models'),
-            "@assets": path.resolve(__dirname,'src/assets'),
+            "@assets": path.resolve(__dirname, 'src/assets'),
             '@': path.resolve(__dirname, 'src')
         }
     },
     optimization: {
         splitChunks: {
             chunks: "all"
-        }
+        },
+
+        minimize: true,
+        minimizer: [new CssMinimizerPlugin({test:/\.css$/ }),],
     },
     devServer: {
         port: 4200
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: "./index.html"
+            template: "./index.html",
         }),
         new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+
+        }),
         new CopyPlugin({
             patterns: [
-                { from: path.resolve(__dirname, 'src/ico.ico'), to: path.resolve(__dirname, 'mydist') },
+                {from: path.resolve(__dirname, 'src/ico.ico'), to: path.resolve(__dirname, 'mydist')},
             ],
         }),
     ],
@@ -46,7 +54,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
