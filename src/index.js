@@ -17,4 +17,4 @@ console.log('xml ', xml)
 
 console.log('CSV', csv)
 
-$('pre').html(post.toString())
+$('pre').addClass('code').html(post.toString())
