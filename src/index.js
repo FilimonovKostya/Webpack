@@ -3,6 +3,7 @@ import "./style/styles.css"
 import json from './assets/json'
 import Logo from './assets/webpack-logo.png'
 import xml from './assets/data.xml'
+import csv from './assets/data.csv'
 
 const post = new Post('Webpack post title', Logo)
 
@@ -12,3 +13,5 @@ console.log('Title upperCase', post.upperCaseTitle())
 console.log('JSON --->', json)
 
 console.log('xml ', xml)
+
+console.log('CSV', csv)
